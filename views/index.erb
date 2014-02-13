@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Client</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+  </head>
+  <body>
+    <h1>Movie Client</h1>
+    <a href='/search'>Search!</a>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Desc</th>
+        <th>Year</th>
+        <th>Poster</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% response.each do |movie| %>
+        <tr>
+          <td><%= movie['title'] %></td>
+          <td><%= movie['desc'] %></td>
+          <td><%= movie['year'] %></td>
+          <td><img src='<%= movie["art"]["url"]%>' width='135' height='200'/><td>
+        </tr>
+      <% end %>
+     </tbody>
+    </table>
+  </body>
+</html>
+
